@@ -15,19 +15,25 @@ Docker Local Streamlit App
 
 2. Run Docker Desktop
 
-3. Build the Docker Image
+3. Clone this repository on your local machine, then open the IDE with the folder of this project. 
+
+4. Create file called "snowflake.config" with snowflake credentials, following the example in **./snowflake.config.example**
+
+4. Open terminal in same path as **./app.py**
+
+5. Build the Docker Image
 ```bash
 docker build -f Dockerfile -t streamlit-erd-viewer:latest .
 ```
 
-4. Run the Docker Container
+6. Run the Docker Container
 ```bash 
 docker run -p 8501:8501 streamlit-erd-viewer:latest 
 ```
 
-5. Open in browser
+7. Open in browser
 
-http://localhost:8501/
+    - http://localhost:8501/ 
 
 
 

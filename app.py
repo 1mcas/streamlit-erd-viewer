@@ -1,3 +1,10 @@
+"""
+-- Created By:    Miguel Castillo
+-- Creation Date: Nov 2023
+-- Company:       Hakkoda
+-- Based on:      https://github.com/cristiscu/streamlit-erd-viewer
+"""
+
 import configparser, re, json, os, pathlib
 import streamlit as st
 from snowflake.snowpark import Session
