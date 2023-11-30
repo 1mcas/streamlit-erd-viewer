@@ -1,5 +1,5 @@
-account=
+[snowflake]
+accountname=
 user=
 password=
-warehouse=
 role=

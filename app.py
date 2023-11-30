@@ -1,10 +1,4 @@
-"""
-Created By:    Cristian Scutaru
-Creation Date: Sep 2023
-Company:       XtractPro Software
-"""
-
-import configparser, re, json, os
+import configparser, re, json, os, pathlib
 import streamlit as st
 from snowflake.snowpark import Session
 from snowflake.snowpark.context import get_active_session
@@ -354,13 +348,13 @@ def getSession():
         return get_active_session()
     except:
         parser = configparser.ConfigParser()
-        parser.read(os.path.join(os.path.expanduser('~'), ".snowsql/config"))
-        section = "connections.my_conn"
+        parser.read(os.path.join(pathlib.Path(__file__).parent.resolve(), 'snowflake.config'))
+        section = "snowflake"
         pars = {
             "account": parser.get(section, "accountname"),
-            
             "user": parser.get(section, "username"),
-            "password": parser.get(section, "password")
+            "password": parser.get(section, "password"),
+            "role": parser.get(section, "role")
         }
         return Session.builder.configs(pars).create()
 
