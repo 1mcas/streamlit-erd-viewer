@@ -358,6 +358,7 @@ def getSession():
         section = "connections.my_conn"
         pars = {
             "account": parser.get(section, "accountname"),
+            
             "user": parser.get(section, "username"),
             "password": parser.get(section, "password")
         }
